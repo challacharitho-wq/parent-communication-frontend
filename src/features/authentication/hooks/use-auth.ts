@@ -42,6 +42,9 @@ export function useAuth() {
 
       navigate({ to: '/dashboard' });
     },
+    onError: (error) => {
+      console.error('Login error:', error);
+    },
   });
 
   const logoutMutation = useMutation({

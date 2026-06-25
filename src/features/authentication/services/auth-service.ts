@@ -10,7 +10,10 @@ import type {
 
 export const authService = {
   async login(input: LoginInput): Promise<SessionResponse> {
+    console.log('Attempting login with:', input.email);
+    console.log('API Base URL:', import.meta.env.VITE_API_URL);
     const response = await api.post('/api/auth/sign-in/email', input);
+    console.log('Login response:', response.data);
     return response.data as SessionResponse;
   },
 
